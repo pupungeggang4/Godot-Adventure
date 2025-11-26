@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://do74elvmc0dgm"]
+
+[ext_resource type="PackedScene" uid="uid://b1nqtvfuvm0i4" path="res://scene/world/world_a1.tscn" id="1_galdp"]
+[ext_resource type="PackedScene" uid="uid://bsvotc2g70dje" path="res://scene/thing/player.tscn" id="2_galdp"]
+[ext_resource type="PackedScene" uid="uid://d6qv0rfgps3q" path="res://scene/thing/enemy.tscn" id="3_galdp"]
+
+[node name="Field" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="WorldA1" parent="World" instance=ExtResource("1_galdp")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_galdp")]
+
+[node name="Player" parent="." instance=ExtResource("2_galdp")]
