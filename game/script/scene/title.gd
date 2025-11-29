@@ -7,7 +7,9 @@ func _process(delta: float) -> void:
     handle_mouse()
     
 func handle_mouse():
-    if Input.is_action_just_pressed('mouse_down'):
-        var mouse = get_viewport().get_mouse_position()
-        if Func.point_inside_rect_ui(mouse, UI.button_start):
+    pass
+
+func _on_color_rect_gui_input(event: InputEvent) -> void:
+    if event is InputEventMouseButton:
+        if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
             get_tree().change_scene_to_file('res://scene/field.tscn')

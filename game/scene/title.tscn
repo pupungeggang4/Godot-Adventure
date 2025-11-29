@@ -12,3 +12,5 @@ offset_left = 160.0
 offset_top = 160.0
 offset_right = 1120.0
 offset_bottom = 240.0
+
+[connection signal="gui_input" from="UI/ColorRect" to="." method="_on_color_rect_gui_input"]
