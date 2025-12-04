@@ -1,16 +1,83 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1cu8mue0uta2"]
+[gd_scene load_steps=3 format=3 uid="uid://d1cu8mue0uta2"]
 
 [ext_resource type="Script" uid="uid://b0s562hbtc4t4" path="res://script/scene/title.gd" id="1_4fdtc"]
+[ext_resource type="Theme" uid="uid://2gu55nslccdx" path="res://res/font_neodgm.tres" id="2_hr6ky"]
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_4fdtc")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="UI"]
+[node name="ButtonStart" type="ColorRect" parent="UI"]
 offset_left = 160.0
 offset_top = 160.0
 offset_right = 1120.0
 offset_bottom = 240.0
 
-[connection signal="gui_input" from="UI/ColorRect" to="." method="_on_color_rect_gui_input"]
+[node name="ButtonCollection" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 240.0
+offset_right = 1120.0
+offset_bottom = 320.0
+color = Color(1, 1, 0, 1)
+
+[node name="ButtonErase" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 320.0
+offset_right = 1120.0
+offset_bottom = 400.0
+
+[node name="ButtonQuit" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 400.0
+offset_right = 1120.0
+offset_bottom = 480.0
+color = Color(1, 1, 0, 1)
+
+[node name="TextTitle" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 244.0
+offset_bottom = 52.0
+theme = ExtResource("2_hr6ky")
+text = "Card Adventure"
+
+[node name="TextStart" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 180.0
+offset_right = 404.0
+offset_bottom = 212.0
+theme = ExtResource("2_hr6ky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Start Game"
+
+[node name="TextCollection" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 260.0
+offset_right = 404.0
+offset_bottom = 292.0
+theme = ExtResource("2_hr6ky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Collection"
+
+[node name="TextErase" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 340.0
+offset_right = 404.0
+offset_bottom = 372.0
+theme = ExtResource("2_hr6ky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Erase Data"
+
+[node name="TextQuit" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 420.0
+offset_right = 404.0
+offset_bottom = 452.0
+theme = ExtResource("2_hr6ky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Quit Game"
+
+[connection signal="gui_input" from="UI/ButtonStart" to="." method="_on_color_rect_gui_input"]
+[connection signal="gui_input" from="UI/ButtonCollection" to="." method="_on_button_collection_gui_input"]
+[connection signal="gui_input" from="UI/ButtonQuit" to="." method="_on_button_quit_gui_input"]
